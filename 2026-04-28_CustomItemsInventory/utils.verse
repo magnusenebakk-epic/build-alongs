@@ -87,9 +87,6 @@ default_prefab := class(entity){}
 (InEntity:entity).GetFirstAncestor(entity_type:castable_subtype(entity))<transacts><decides>:entity_type=
     (for (I : InEntity.FindAncestorEntities(entity_type)){ I }) [0]
 
-(Agent:agent).GetFortCharacterComponent()<transacts><decides>:component=
-    for (Component : Agent.GetComponents(), fort_character[Component]) { Component } [0]
-
 (Agent:agent).GetStatsHolderEntity()<transacts><decides>:entity=
     P := player[Agent]
     Data := P.GetPlayerData[]
